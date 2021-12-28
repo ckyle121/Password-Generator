@@ -12,7 +12,7 @@ var special_characters = ["!","/","#","@","&","?","$","%"];
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 
 // Write funciton to generate random password 
-// Write password to the #password input
+
 var generatePassword = function(){
   
   // prompt user to enter length of password 
@@ -37,6 +37,33 @@ var generatePassword = function(){
       var confirmLowerCase = confirm("Click OK if you want your password to contain lower case characters.");
       var confirmUpperCase = confirm("Click OK if you want your password to contain upper case characters. ");
     }
+
+  // Create array to contain password character choices
+  var passwordCharacters = []
+  
+  // special characters
+  if (confirmSpecialCharacters){
+    passwordCharacters = passwordCharacters.concat(special_characters)
+  }
+
+  // numbers
+  if (confirmNumbers){
+    passwordCharacters = passwordCharacters.concat(numbers)
+  }
+
+  // lower case letters
+  if (confirmLowerCase){
+    passwordCharacters = passwordCharacters.concat(lowercase_letter)
+  }
+
+  // upper case letters
+  if(confirmUpperCase){
+    passwordCharacters = passwordCharacters.concat(uppercase_letters)
+  }
+
+    console.log(passwordCharacters)
+
+}
 
 // Write password to the #password input
 function writePassword() {
