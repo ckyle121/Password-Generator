@@ -11,6 +11,33 @@ var special_characters = ["!","/","#","@","&","?","$","%"];
 
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 
+// Write funciton to generate random password 
+// Write password to the #password input
+var generatePassword = function(){
+  
+  // prompt user to enter length of password 
+  var confirmLength = (prompt("How many characters do you want your password to be? Please enter a number between 8 and 128."));
+
+  // make sure user input a password length between 8 and 128
+  while(confirmLength < 8 || confirmLength > 128){
+    alert("Password must be between 8 and 128 characters");
+    var confirmLength = (prompt("How many characters do you want your password to be? Please enter a number between 8 and 128."))
+  }
+
+  // Determine parameters of password 
+  var confirmSpecialCharacters = confirm("Click OK if you want your password to contian special characters.");
+  var confirmNumbers = confirm("Click OK if you want your password to contain numbers.");
+  var confirmLowerCase = confirm("Click OK if you want your password to contain lower case characters.");
+  var confirmUpperCase = confirm("Click OK if you want your password to contain upper case characters. ");
+    // make sure user includes at least one parameter 
+    while(confirmSpecialCharacters === false && confirmNumbers === false && confirmLowerCase === false && confirmUpperCase === false){
+      alert("You must choose one option to create your password");
+      var confirmSpecialCharacters = confirm("Click OK if you want your password to contian special characters.");
+      var confirmNumbers = confirm("Click OK if you want your password to contain numbers.");
+      var confirmLowerCase = confirm("Click OK if you want your password to contain lower case characters.");
+      var confirmUpperCase = confirm("Click OK if you want your password to contain upper case characters. ");
+    }
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
