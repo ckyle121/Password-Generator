@@ -12,7 +12,6 @@ var special_characters = ["!","/","#","@","&","?","$","%"];
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 
 // Write funciton to generate random password 
-
 var generatePassword = function(){
   
   // prompt user to enter length of password 
@@ -63,7 +62,15 @@ var generatePassword = function(){
 
     console.log(passwordCharacters)
 
-}
+    // Create string for password 
+    var password = ""
+
+    for (var i = 0; i < confirmLength; i++){
+      password = password + passwordCharacters[Math.floor(Math.random() *  passwordCharacters.length)];
+      console.log(password)
+    }
+    return password; 
+};
 
 // Write password to the #password input
 function writePassword() {
