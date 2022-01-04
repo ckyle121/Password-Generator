@@ -20,7 +20,7 @@ var generatePassword = function(){
   // make sure user input a password length between 8 and 128
   while(confirmLength < 8 || confirmLength > 128){
     alert("Password must be between 8 and 128 characters");
-    var confirmLength = (prompt("How many characters do you want your password to be? Please enter a number between 8 and 128."))
+    var confirmLength = (prompt("Please enter a number between 8 and 128."))
   }
 
   // Determine parameters of password 
@@ -38,7 +38,7 @@ var generatePassword = function(){
     }
 
   // Create array to contain password character choices
-  var passwordCharacters = []
+  var passwordCharacters = [];
   
   // special characters
   if (confirmSpecialCharacters){
@@ -79,7 +79,7 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
